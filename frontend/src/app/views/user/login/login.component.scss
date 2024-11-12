@@ -1,0 +1,31 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/auth-form";
+
+.login {
+  padding-top: 106px;
+  padding-bottom: 92px;
+
+  .container {
+    .auth-common {
+      .auth-inputs {
+
+       .auth-input {
+         width: 422px;
+       }
+        .auth-checkbox {
+          a {
+            text-decoration: $blue-text-color;
+          }
+        }
+
+        .auth-button {
+          margin-bottom: 10px;
+        }
+
+      }
+      .auth-image {
+        margin-left: 185px;
+      }
+    }
+  }
+}

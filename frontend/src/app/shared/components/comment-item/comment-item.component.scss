@@ -1,0 +1,78 @@
+@import "../../../../assets/styles/variables";
+
+.comment {
+  .comment-user {
+    display: flex;
+    column-gap: 26px;
+    margin-bottom: 15px;
+
+    .comment-user-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid $blue-text-color;
+      background-color: #B9D4FD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .comment-user-info {
+      .comment-user-info-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: $blue-text-color;
+      }
+
+      .comment-user-info-date {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #BEBEBE;
+      }
+    }
+  }
+
+  .comment-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 39px;
+    color: $dark-blue-text-color;
+  }
+
+  .comment-actions {
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+
+    .comment-action {
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-right: 3px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      a {
+        cursor: pointer;
+      }
+
+      .doAction {
+        color: $blue-text-color;
+      }
+    }
+
+    .comment-complain {
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+}

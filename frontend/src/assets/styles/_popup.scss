@@ -1,0 +1,126 @@
+@import "../../assets/styles/variables";
+
+.popup-hull {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.53);
+  position: fixed;
+  top: 0;
+
+  &.active {
+    display: flex;
+  }
+
+  .popup {
+    text-align: end;
+    padding: 30px;
+    width: 727px;
+    height: 489px;
+    border-radius: 10px;
+    border: 1.5px solid $blue-text-color;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+
+    a {
+      cursor: pointer;
+      margin-bottom: 48px;
+    }
+
+    .popup-wrapper {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin-top: 48px;
+
+      .popup-title {
+        margin-bottom: 20px;
+      }
+
+      .popup-input {
+        max-width: 422px;
+        margin: 0 auto 5px auto;
+
+        .invalid-feedback {
+          margin-bottom: 0;
+          text-align: start;
+        }
+      }
+
+      .popup-action {
+        margin-top: 15px;
+
+        .button {
+          width: 422px;
+          font-size: 16px;
+          font-weight: 400;
+        }
+      }
+
+      .error {
+        margin-top: 20px;
+        color: red;
+      }
+    }
+  }
+}
+
+.thanks-hull {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.53);
+  position: fixed;
+  top: 0;
+
+  &.active {
+    display: flex;
+  }
+
+  .thanks-wrapper {
+    text-align: end;
+    padding: 30px;
+    width: 727px;
+    height: 489px;
+    border-radius: 10px;
+    border: 1.5px solid $blue-text-color;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+
+    a {
+      cursor: pointer;
+    }
+
+    .thanks {
+      text-align: center;
+      margin-top: 117px;
+
+      .thanks-title {
+        margin-bottom: 20px;
+      }
+
+      .thanks-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        margin-bottom: 40px;
+      }
+
+      .thanks-action {
+        .button {
+          width: 73px;
+          height: 36px;
+          padding: 10px 20px;
+        }
+
+      }
+    }
+  }
+}

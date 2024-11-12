@@ -1,0 +1,46 @@
+@import "../../../../assets/styles/variables";
+
+.blog-sorting-item {
+  margin: 5px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  blog-sorting-item-title, span {
+    font-size: 16px;
+    color: #BEBEBE;
+  }
+
+  .sorting-svg {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 31px;
+
+    &.minus {
+      display: none;
+    }
+  }
+
+  &.active {
+    span {
+      color: $dark-blue-text-color;
+    }
+  }
+
+  &.active {
+    .sorting-svg {
+      &.plus {
+        display: none;
+      }
+    }
+
+    .sorting-svg {
+      &.minus {
+        display: block;
+      }
+    }
+
+  }
+
+}

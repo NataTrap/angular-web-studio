@@ -1,0 +1,190 @@
+@import "../../../../assets/styles/variables";
+
+.detail {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  .container {
+    .detail-tip {
+      margin-bottom: 60px;
+      font-size: 16px;
+      color: #B9D5FD;
+
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #B9D5FD;
+      }
+
+      .slash {
+        margin: 0 8px;
+      }
+
+      .detail-tip-small-title {
+        color: $blue-text-color;
+      }
+    }
+
+    .detail-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 60px;
+
+      .detail-main {
+        max-width: 607px;
+
+        .detail-main-description {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 26px;
+          color: $blue-text-color;
+        }
+      }
+
+      .detail-main-image {
+        max-width: 527px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .detail-more {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .detail-more-left {
+        .detail-more-left-text {
+          max-width: 818px;
+          font-family: 'Montserrat', sans-serif;
+          color: $dark-blue-text-color;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 18px;
+          margin-bottom: 60px;
+        }
+
+        .detail-more-left-socials {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 18px;
+          color: $blue-text-color;
+          display: flex;
+          align-items: center;
+          margin-bottom: 60px;
+
+          span {
+            margin-right: 20px;
+          }
+
+          a {
+            cursor: pointer;
+            margin-right: 13.5px;
+          }
+        }
+
+        .detail-more-comments {
+          max-width: 854px;
+          margin-bottom: 60px;
+
+          .detail-more-comments-title {
+            font-family: 'Lora', sans-serif;
+            font-size: 38px;
+            font-weight: 400;
+            color: $blue-text-color;
+            margin-bottom: 20px;
+          }
+
+          .extra-data {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 40px;
+
+
+            a {
+              color: $blue-text-color;
+              cursor: pointer;
+            }
+          }
+          .no-comment {
+            font-size: 24px;
+          }
+
+          .writeComment {
+            .detail-textarea {
+              font-family: 'Montserrat', sans-serif;
+              font-size: 14px;
+              font-weight: 400;
+              width: 818px;
+              height: 248px;
+              padding: 20px;
+              border: 1.5px solid $blue-text-color;
+              color: $dark-blue-text-color;
+              border-radius: 3px;
+              outline: none;
+              resize: none;
+            }
+
+            .detail-textarea::placeholder {
+              font-family: 'Montserrat', sans-serif;
+              color: #A8ABA7;
+              font-size: 14px;
+              font-weight: 400;
+            }
+
+            .detail-button {
+              width: 422px;
+              font-size: 16px;
+              margin-top: 20px;
+              margin-bottom: 60px;
+            }
+          }
+
+          .comments {
+            display: flex;
+            flex-direction: column;
+            row-gap: 40px;
+          }
+
+          .loadOtherComments {
+            margin-top: 60px;
+            column-gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+
+              a {
+                display: flex;
+                align-items: center;
+                column-gap: 10px;
+                color: $blue-text-color;
+                cursor: pointer;
+              }
+          }
+        }
+      }
+
+      .detail-more-aside {
+        .detail-more-aside-title {
+          font-family: 'Lora', sans-serif;
+          font-size: 26px;
+          font-weight: 400;
+          margin-bottom: 20px;
+          color: $blue-text-color;
+        }
+
+        .detail-more-aside-cards {
+          display: flex;
+          flex-direction: column;
+          row-gap: 60px;
+        }
+      }
+    }
+  }
+}

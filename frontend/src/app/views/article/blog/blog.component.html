@@ -1,0 +1,58 @@
+<div class="blog">
+  <div class="container">
+    <div class="common-title blog-title">Блог</div>
+    <div class="blog-layout">
+      <div class="blog-applied-filters">
+        <div class="blog-applied-filter" *ngFor="let appliedFilter of appliedFilters">
+          <span class="blog-applied-filter-text">{{appliedFilter.name}}</span>
+          <a class="blog-applied-filter-cancel" (click)="removeAppliedFilter(appliedFilter)">
+            <svg class="blog-applied-filter-svg" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_2887_213)">
+                <line x1="1.93553" y1="3.15002" x2="13.9563" y2="15.1708" stroke="#709FDC" stroke-linecap="round"/>
+                <line x1="13.9236" y1="3.12984" x2="1.90278" y2="15.1507" stroke="#709FDC" stroke-linecap="round"/>
+              </g>
+              <defs>
+                <clipPath id="clip0_2887_213">
+                  <rect width="16" height="16" fill="white" transform="translate(0 0.5)"/>
+                </clipPath>
+              </defs>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="blog-sorting" [class.open]="sortingOpen">
+        <div class="blog-sorting-head" (click)="toggleOpen()">
+          <span class="blog-sorting-head-title">Фильтр</span>
+          <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10 14.5C9.41668 14.5 8.83335 14.275 8.39168 13.8334L2.95835 8.40003C2.71668 8.15837 2.71668 7.75837 2.95835 7.5167C3.20002 7.27503 3.60002 7.27503 3.84168 7.5167L9.27502 12.95C9.67502 13.35 10.325 13.35 10.725 12.95L16.1583 7.5167C16.4 7.27503 16.8 7.27503 17.0417 7.5167C17.2833 7.75837 17.2833 8.15837 17.0417 8.40003L11.6083 13.8334C11.1667 14.275 10.5833 14.5 10 14.5Z"
+              fill="#071739"/>
+          </svg>
+        </div>
+        <div class="blog-sorting-body">
+          <category-filter [category]="category" *ngFor="let category of categories"></category-filter>
+        </div>
+      </div>
+    </div>
+    <div class="blog-articles">
+      <article-card [article]="article" *ngFor="let article of articles"></article-card>
+    </div>
+    <div class="pagination" *ngIf="pages.length > 1">
+      <div class="pagination-arrow">
+        <a>
+          <img src="assets/images/previous-common.png" alt="Назад" *ngIf="this.activeParams.page? this.activeParams.page !== 1 : false" (click)="openPrevPage()">
+          <img src="assets/images/previous-common-gray.png" alt="Назад" *ngIf="this.activeParams.page ? this.activeParams.page === 1 : true">
+        </a>
+      </div>
+      <div class="pagination-pages">
+        <a class="pagination-page" [class.active]="this.activeParams.page? this.activeParams.page === page : (page === 1)" *ngFor="let page of pages"(click)="openPage(page)">{{page}}</a>
+      </div>
+      <div class="pagination-arrow">
+        <a>
+          <img src="assets/images/next-common.png" alt="Вперёд" *ngIf="this.activeParams.page? this.activeParams.page !== pages.length : true" (click)="openNextPage()">
+          <img src="assets/images/next-common-gray.png" alt="Вперёд" *ngIf="this.activeParams.page? this.activeParams.page === pages.length : false">
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

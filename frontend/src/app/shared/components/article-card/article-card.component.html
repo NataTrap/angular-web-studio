@@ -1,0 +1,13 @@
+<div class="article-item">
+  <div class="article-item-image" style="background-image: url('assets/images/articles/{{article.image}}')"></div>
+  <div class="small-title article-title">{{article.title}}</div>
+  <div class="common-text article-text">
+    {{article.description}}
+  </div>
+  
+    <a [routerLink]="'/article/' + article.url">
+      Читать дальше
+    </a>
+
+  <div class="article-item-category">{{article.category}}</div>
+</div>

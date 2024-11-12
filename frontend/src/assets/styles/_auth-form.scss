@@ -1,0 +1,84 @@
+@import "variables";
+
+.auth-common {
+  display: flex;
+  align-items: center;
+
+  .auth-inputs {
+
+    .auth-inputs-title {
+      font-family: 'Lora', sans-serif;
+      font-size: 36px;
+      font-weight: 400;
+      color: $blue-text-color;
+      margin-bottom: 40px;
+    }
+
+    .auth-input {
+      margin-bottom: 5px;
+      position: relative;
+
+      .auth-input-password {
+        padding: 17.5px 35px 17.5px 20px;
+      }
+
+      svg {
+        position: absolute;
+        cursor: pointer;
+        top: 17px;
+        right: 17px;
+      }
+
+    }
+
+    .auth-checkbox {
+      margin-top: 5px;
+      margin-bottom: 40px;
+      display: flex;
+
+      input {
+        margin: 0;
+      }
+
+      label {
+        font-size: 14px;
+        font-weight: 400;
+        color: $dark-blue-text-color;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    }
+
+    .auth-button {
+      margin-bottom: 10px;
+
+      .button {
+        width: 422px;
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+
+    .auth-link {
+      font-size: 14px;
+      font-weight: 400;
+      color: #1E1A2B;
+
+      a {
+        font-size: 14px;
+        font-weight: 400;
+        color: #709FDC;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+
+  .auth-image {
+    max-width: 607px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

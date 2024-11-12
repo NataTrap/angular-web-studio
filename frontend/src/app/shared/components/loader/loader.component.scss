@@ -1,0 +1,36 @@
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999999;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.62);
+
+  .loader {
+    max-width: 160px;
+    height: 160px;
+    animation: loading linear 1s infinite;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+
+}

@@ -1,0 +1,51 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/auth-form";
+
+.signup {
+  padding-top: 123px;
+  padding-bottom: 120px;
+
+  .container {
+    .auth-common {
+      column-gap: 185px;
+
+      .auth-inputs {
+        width: 422px;
+
+        .auth-checkbox {
+          .custom-checkbox + label {
+            display: block;
+          }
+
+          label {
+            line-height: 18px;
+
+            a {
+              color: $blue-text-color;
+            }
+          }
+        }
+
+        .auth-button {
+          margin-bottom: 10px;
+        }
+
+        .auth-checkbox {
+          position: relative;
+
+          input {
+            position: relative;
+            bottom: 9px;
+            cursor: pointer;
+          }
+
+          label {
+            a {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
