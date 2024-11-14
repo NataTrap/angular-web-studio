@@ -16,7 +16,7 @@
   </div>
   <div class="comment-actions">
     <div class="comment-action">
-      <span [class.doAction]="showBlueActionLike">{{articleDetailComment.likesCount}}</span>
+      <span [class.doAction]="showBlueActionLike">{{likesCount}}</span>
       <a (click)="doAction(articleDetailComment.id, this.actionForCommentTypeLike)">
         <svg *ngIf="!showBlueActionLike" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -33,7 +33,7 @@
       </a>
     </div>
     <div class="comment-action">
-      <span [class.doAction]="showBlueActionDislike">{{articleDetailComment.dislikesCount}}</span>
+      <span [class.doAction]="showBlueActionDislike">{{dislikesCount}}</span>
       <a (click)="doAction(articleDetailComment.id, this.actionForCommentTypeDislike)">
         <svg *ngIf="!showBlueActionDislike" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path

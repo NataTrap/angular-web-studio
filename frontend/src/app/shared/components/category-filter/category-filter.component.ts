@@ -29,7 +29,6 @@ export class CategoryFilterComponent implements OnInit, OnDestroy {
       this.activeParams = ActiveParamsUtil.processParams(params);
 
       //для перезагрузки страницы
-
       if (params['categories']) {
         this.activeParams.categories = Array.isArray(params['categories']) ? params['categories'] : [params['categories']];
         if (this.activeParams.categories?.includes(this.category.url)) {

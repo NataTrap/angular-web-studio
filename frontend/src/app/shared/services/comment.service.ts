@@ -12,9 +12,6 @@ import {ActionFromUserForComment} from "../../../types/action-from-user-for-comm
 })
 export class CommentService {
 
-  likesCount: number = 0;
-  dislikesCount: number = 0;
-
   constructor(private http: HttpClient) { }
 
   getComments(offsetNumber: number, article: string): Observable<OtherCommentType> {

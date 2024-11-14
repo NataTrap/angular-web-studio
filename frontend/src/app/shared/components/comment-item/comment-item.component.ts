@@ -8,6 +8,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 import {ActionFromUserForComment} from "../../../../types/action-from-user-for-comment";
 import {AuthService} from "../../../core/auth/auth.service";
 import {Subscription} from "rxjs";
+import {ChangeDetectorRef} from '@angular/core';
 
 @Component({
   selector: 'comment-item',
@@ -29,14 +30,40 @@ export class CommentItemComponent implements OnInit, OnDestroy {
   observableCommentService: Subscription = new Subscription();
   observableCommentServiceApply: Subscription = new Subscription();
 
-  articleDetail!: ArticleType;
+  articleDetail: ArticleType;
   quantityInArrayOfComments: number = 0;
 
 
   constructor(private _snackBar: MatSnackBar,
               private commentService: CommentService,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private _cdr: ChangeDetectorRef) {
     this.isLogged = this.authService.getIsLoggedIn();
+    this.articleDetail =
+      {
+        text: '',
+        comments: [
+          {
+            id: '',
+            text: '',
+            date: '',
+            likesCount: 0,
+            dislikesCount: 0,
+            user: {
+              id: '',
+              name: ''
+            }
+          }
+        ],
+        commentsCount: 0,
+        id: '',
+        title: '',
+        description: '',
+        image: '',
+        date: '',
+        category: '',
+        url: ''
+      }
   }
 
   ngOnInit() {
@@ -44,25 +71,19 @@ export class CommentItemComponent implements OnInit, OnDestroy {
       this.isLogged = isLoggedIn;
     });
 
-    // this.commentService.getComments(3, '63ca02683fe296dbe1e873e2')
-    //   .subscribe(data => {
-    //     // console.log(data.comments)
-    //   })
-
-
     if (this.isLogged) {
       this.observableCommentService = this.commentService.getActionsForComment(this.articleDetailComment.id)
         .subscribe((data: ActionFromUserForComment[]) => {
           data.forEach((item: ActionFromUserForComment) => {
             if (item.comment === this.articleDetailComment.id) {
               if (item.action === this.actionForCommentTypeLike) {
-
                 this.showBlueActionLike = true;
-
-
+                this.likesCount = 1
               }
               if (item.action === this.actionForCommentTypeDislike) {
                 this.showBlueActionDislike = true;
+                this.dislikesCount = 1
+
               }
             }
           });
@@ -78,28 +99,45 @@ export class CommentItemComponent implements OnInit, OnDestroy {
           next: (data: DefaultResponseType) => {
             if (!data.error) {
               if (action === this.actionForCommentTypeLike) {
-                this.articleDetailComment.dislikesCount--
-                this.articleDetailComment.likesCount++
                 this._snackBar.open('Ваш голос учтен');
                 this.showBlueActionDislike = false;
-                this.showBlueActionLike = !this.showBlueActionLike;
+                this.showBlueActionLike = !this.showBlueActionLike
+                if (this.showBlueActionLike) {
+                  this.likesCount = 1
+                } else {
+                  if (!this.showBlueActionLike) {
+                    this.likesCount = 0
+                  }
+                }
+              } else {
+                if (action === this.actionForCommentTypeDislike) {
+                  this.likesCount = 0
+                }
               }
 
               if (action === this.actionForCommentTypeDislike) {
-                this.articleDetailComment.likesCount--
-                this.articleDetailComment.dislikesCount++
                 this._snackBar.open('Ваш голос учтен');
                 this.showBlueActionLike = false;
                 this.showBlueActionDislike = !this.showBlueActionDislike;
 
+                if (this.showBlueActionDislike) {
+                  this.dislikesCount = 1
+                } else {
+                  if (!this.showBlueActionDislike) {
+                    this.dislikesCount = 0
+                  }
+                }
+
+              } else {
+                if (action === this.actionForCommentTypeLike) {
+                  this.dislikesCount = 0
+                }
               }
 
               if (action === this.actionForCommentTypeViolate) {
                 this._snackBar.open('Жалоба отправлена');
               }
-
             }
-
           },
           error: (errorResponse: HttpErrorResponse) => {
             if (errorResponse.error && errorResponse.error.message) {
